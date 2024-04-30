@@ -11,11 +11,47 @@
 </head>
 <body>
   <main>
-    
+    <header class="indexheader">
+        <div class="index_header_wrapper">
+          <div class="index_header_content">
+              <nav class="index_nav">
+                
+                <div class="index_search">
+                  <img src="./images/logoimg.png" class="logoimg">
+              </div>
+
+              <ul>
+                <form class="rectangle-search-bar"><input type="text" class="search-input" placeholder="Search" onkeydown="search(event)"></form>
+                <li>
+                    <a href="index.html" class="">Home</a>  
+                </li>
+
+                <li>
+                    <a href="products.html" class="">Products</a>
+                </li>
+
+                <li>
+                    <a href="aboutus.html" class="">AboutUs</a>
+                </li>
+
+                <li>
+                  <a href="./cart.html"><img src="./images/ion_cart.png" alt="cart" class="cartlogo"></a>
+                </li>
+
+                <li>
+                  <img src="./images/profilelogin.png" alt="Login/Register" class="loginlogo" onclick="togglePopOut()">
+                </li>
+                
+              </ul>
+              </nav>
+          </div>
+        </div>
+      </header>
     
     <div>
-        <section class="img-bg-blend">
-          <a href="./index.html"><img src="./images/logoimg.png" class="logoimg"></a>
+        <section class="img-bg-blend2">
+            
+          
              <div class="regcontainer">
                 <div class="registration">
                     <label for="register">REGISTRATION</label>
