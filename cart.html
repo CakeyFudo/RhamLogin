@@ -10,27 +10,117 @@
 
 </head>
 <body>
-    <main>
+  <header class="indexheader">
+    <div class="index_header_wrapper">
+      <div class="index_header_content">
+          <nav class="index_nav">
+            
+            <div class="index_search">
+              <img src="./images/logoimg.png" class="logoimg">
+          </div>
+
+          <ul>
+            <form class="rectangle-search-bar"><input type="text" class="search-input" placeholder="Search" onkeydown="search(event)"></form>
+            <li>
+                <a href="index.html" class="">Home</a>  
+            </li>
+
+            <li>
+                <a href="products.html" class="">Products</a>
+            </li>
+
+            <li>
+                <a href="aboutus.html" class="">AboutUs</a>
+            </li>
+
+            <li>
+              <a href=""><img src="./images/ion_cart.png" alt="cart" class="cartlogo"></a>
+            </li>
+
+            <li>
+              <img src="./images/profilelogin.png" alt="Login/Register" class="loginlogo" onclick="togglePopOut()">
+            </li>
+            
+          </ul>
+          </nav>
+      </div>
+    </div>
+  </header>
+  <main>
     
     
     <div>
-      
-    <section>
-             <div class="img-bg-blend">  
-                   <img src="./images/logoimg.png" class="logoimg">   
-                        <div>
-                             <form class="rectangle-search-bar"><input type="text" class="search-input" placeholder="Search" onkeydown="search(event)"></form>
-                        </div>
-                                <a href="Dashboard.html" class="text-home-top-right">Home</a>
-                                <label class="text-Products-top-right">Products</label>
-                                <label class="text-Aboutus-top-right">AboutUs</label>
-                                <img src="./images/profilelogin.png" alt="Login/Register" class="loginlogo" onclick="togglePopOut()">
+      <section class="img-bg-blend">
+       <div class="cart_wrapper">
+        <div  class="cart_shopping_cart">
+          <label class="cart_shop_label">SHOPPING CART</label>
+            <div class="shop_titles">
+              <h4>PRODUCT</h4>
+              <h4>QUANTITY</h4>
+              <h4>PRICE</h4>
+              <h4>TOTAL</h4>
+            </div>
+            <div class="product_item">
+              <img src="./images/cartimg1.png" alt="">
+                <input type="number">
+              <div class="cart_price_Total">
+                <label class="php68">68 PHP</label>
+                <label for="">Total</label>
+              </div> 
+            </div>
 
+            <div class="product_item">
+              <img src="./images/cartimg1.png" alt="">
+                <input type="number">
+              <div class="cart_price_Total">
+                <label class="php68">68 PHP</label>
+                <label for="">Total</label>
+              </div> 
+            </div>
 
-
+            <div class="product_item">
+              <img src="./images/cartimg1.png" alt="">
+                <input type="number">
+              <div class="cart_price_Total">
+                <label class="php68">68 PHP</label>
+                <label for="">Total</label>
+              </div> 
+            </div>
+            <div class="shopping_label">
+              <label for="Continue Shopping"><--Continue Shopping</label>
+            </div>
+            
+        </div>
+        <div class="cart_summary">
+          <label class="cart_summary_label">Order Summary</label>
+          <div class="cart_summary_content">
+            
+          </div>
+          <div class="cart_summary_bottom">
+            <div>
+              <h5>Subtotal</h5>
+              <h5>42069 PHP</h5>
+            </div>
+            <div>
+              <h5>Shipping Fee</h5>
+              <h5>50 PHP</h5>
+            </div>
+            <div>
+              <h5>Total</h5>
+              <h5>7000 PHP</h5>
+            </div>
+          </div>
+        <div class="cart_summary_checkout">
+          <button>CHECKOUT</button>
+        </div>  
+      </div>
+    </div>
+              
+            
+          
                                 <div class="overlay" id="overlay"></div>
                         <div class="pop-out-container" id="popOutContainer">
-                            <img src="./images/logoimg.png" class="logologinimg">
+                            <img src="./images/logoimg.png" class="logologinContainer">
                              <img src="./images/CloseButton.png" alt="Close" class="close-button" onclick="closePopOut()">
 
 
@@ -41,7 +131,7 @@
                                     <input type="password" id="password" name="password" placeholder="Password" required>
                                     <div class="checkbox-container" style="align-items: flex-start;">
                                         <input type="checkbox" id="rememberMe" name="rememberMe">
-                                         <label for="rememberMe">Remember Me</label>
+                                         <span class="rememberMe">Remember Me</span>
                                          <span class="forgotps-text">Forgot password</span>
                                     </div>
 
@@ -49,10 +139,10 @@
                                     
             
                                     
-                                     <button type="submit">Login</button>
+                                     <a href="indexloggedin.html"><button type="submit">Login</button></a>
                                      <div>
                                           <span class="registerWords">Don't have an account?</span>
-                                          <span class="register-text">Register</span>
+                                          <a href="./register.html"><span class="register-text">Register</span></a>
                                       </div>
                                  </form>
                             </div>
@@ -96,58 +186,26 @@
                                   }, 100); 
                                 }
                             </script>
-
-
-    <script>
-             function search(event) {
-                if (event.key === "Enter") {
-                 let searchText = event.target.value.trim();
-                 alert("Searching for: " + searchText);
-                }
-            }
-    </script>
-  
-    
-
-  
-                </div>
-    </section>
-   
-
+                             <script>
+                              function decreaseQuantity(inputId) {
+                                  const quantityInput = document.getElementById(inputId);
+                                  let quantity = parseInt(quantityInput.value);
+                                  if (quantity > 1) {
+                                      quantity--;
+                                      quantityInput.value = quantity;
+                                  }
+                              }
+                      
+                              function increaseQuantity(inputId) {
+                                  const quantityInput = document.getElementById(inputId);
+                                  let quantity = parseInt(quantityInput.value);
+                                  quantity++;
+                                  quantityInput.value = quantity;
+                              }
+                          </script>
+            </section>
     </div>
-    </main>
-    
-
-
-<section class="sectTrending">
-
-    <label class="trending-label">TRENDING</label>
-    <div class="image-container">
-    <div><img src="./images/BrushProduct.png"></div>
-    <div><img src="./images/GlueProduct.png"></div>
-    <div><img src="./images/PaintProduct.png"></div>
-    <div><img src="./images/PenProduct.png"></div>
-    <div><img src="./images/PaperProduct.png"></div>
-    <div><img src="./images/GlueProduct.png"></div>
-    </div> 
-
-</section>
-
-
-<section class="sectRecent">
-    
-    <label class="recently-label">RECENTLY</label>   
-    <div class="image-container">
-    <div><img src="./images/PenProduct.png"></div>
-    <div><img src="./images/PaperProduct.png"></div>
-    <div><img src="./images/BrushProduct.png"></div>
-    <div><img src="./images/GlueProduct.png"></div>
-    <div><img src="./images/PaintProduct.png"></div>
-    <div><img src="./images/PaperProduct.png"></div>
-    </div>      
-
-</section> 
-
+  </main>
 
 <div class="footer">
   <div class="container">
@@ -162,14 +220,15 @@
                   <li>Discount</li>
                   <li>Blogs</li>
                   <li>Policy</li>
-                  <li>idk</li>
+                  <li>Products</li>
                   <li>Coupons</li>
               </ul>
               </div>
                 
           </div>
           <div class="footer-col-3">
-              <h3>Follow Us nigga</h3>
+              <h3>Follow Us</h3>
+              <div class="links">
               <ul>
                   <li>Facebook</li>
                   <li>Instagram</li>
@@ -177,6 +236,7 @@
                   <li>LinkedIn</li>
                   <li>Youtube</li>
               </ul>
+            </div>  
           </div>
       </div>
       <hr>
