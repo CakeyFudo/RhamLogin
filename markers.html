@@ -34,7 +34,7 @@
             </li>
 
             <li>
-              <a href="./cart.html"><img src="./images/ion_cart.png" alt="cart" class="cartlogo"></a>
+              <a href=""><img src="./images/ion_cart.png" alt="cart" class="cartlogo"></a>
             </li>
 
             <li>
@@ -50,16 +50,32 @@
     
     
     <div>
-      <section class="img-bg-blend2">
-                               
-                          <div class="aboutus_container">
-                            <div class="aboutus_content_top">
-                              <label class="aboutus_titles">About Us</label>
-                                </div>
-                                 <div class="aboutus_content">
-                                  <p>At kantunan.com, we believe everyone deserves to have a website or online store. innovation and simplicity make us happy, our website offers a diverse selection of art materials catering to both art enthusiasts and aspiring creators.<p>
-                            </div>
-                          </div>
+      <section class="img-bg-blend">
+       <div class="coloredpencil_wrapper">
+        <div class="coloredpencil_picture">
+            <img src="./images/markerBigpic.png" alt="">
+          </div>
+          <div class="product_name">
+            <h2>Colored Markers</h2>
+            <label class="Pricelabel">PRICE : 98 PHP</label>
+            <label for="">SOLD 5K</label>
+            <div class="Description">
+              <label>Description :</label>
+              <label>Introducing our vibrant and versatile colored markers, perfect for unleashing your creativity!</label>
+              <label>Each set includes a rich spectrum of colors, from deep and bold hues to soft and pastel shades, allowing you to bring your artistic visions to life with precision and style. </label>
+              </div>
+            <div class="product_buttons">
+              <div>
+                <a href="./products.html"><button class="backbutton">BACK</button></a>
+                <a href="./cart.html"><button class="Addtocart">ADD TO CART</button></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+              
+            
+          
                                 <div class="overlay" id="overlay"></div>
                         <div class="pop-out-container" id="popOutContainer">
                             <img src="./images/logoimg.png" class="logologinContainer">
@@ -128,6 +144,23 @@
                                   }, 100); 
                                 }
                             </script>
+                             <script>
+                              function decreaseQuantity(inputId) {
+                                  const quantityInput = document.getElementById(inputId);
+                                  let quantity = parseInt(quantityInput.value);
+                                  if (quantity > 1) {
+                                      quantity--;
+                                      quantityInput.value = quantity;
+                                  }
+                              }
+                      
+                              function increaseQuantity(inputId) {
+                                  const quantityInput = document.getElementById(inputId);
+                                  let quantity = parseInt(quantityInput.value);
+                                  quantity++;
+                                  quantityInput.value = quantity;
+                              }
+                          </script>
             </section>
     </div>
   </main>

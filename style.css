@@ -961,11 +961,16 @@ h5{
     padding: 1ch 0;
 }
 .shopping_label{
+    
     width: 33.5%;
     height: 5%;
-    color: gold;
+    
     margin-top: 100px;
     margin-left: 80px;
+}
+.shopping_label a{
+    color: gold;
+    text-decoration: none;
 }
 .coloredpencil_wrapper{
     justify-content: space-between;
